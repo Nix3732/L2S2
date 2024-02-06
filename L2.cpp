@@ -10,27 +10,17 @@ public:
     Ellipse() = default;
     Ellipse(int l, int s)
     {    
-        setL(l);
-        setSH(s);
+        setL(l, s);
     }
 
-    void setL(int l)
+    void setALL(int l, int s)
     {
-        if (l < 0)
+        if (l < 0 or s < 0)
         {
-            std::cout << "Negative long semiaxis" << std::endl;
+            std::cout << "Negative semiaxis" << std::endl;
         }
 
         a = l;
-    }
-
-    void setSH(int s)
-    {
-        if (s < 0)
-        {
-            std::cout << "Negative short semiaxis" << std::endl;
-        }
-
         b = s;
     }
 
@@ -48,11 +38,10 @@ public:
 
 int main()
 {   
-    int Baxis, Saxis;
-    std::cin >> Baxis >> Saxis;
+    int axis1, axis2;
+    std::cin >> axis1 >> axis2;
     Ellipse c;
-    c.setL(Baxis);
-    c.setSH(Saxis);
+    c.setALL(axis1, axis2);
 
     std::cout << "Perimetr = " << c.Perimeter() << std::endl << "Ploshad' = " << c.Square() << std::endl;
     return 0;
