@@ -2,33 +2,22 @@
 #include <iostream>
 #include <cmath>
 
-class Ellipse
+namespace ez
 {
-    int a;
-    int b;
-
-public:
-    Ellipse() = default;
-    Ellipse(int l, int s);
-
-    void setALL(int l, int s)
+    class Ellipse
     {
-        if (l < 0 || s < 0)
-        {
-            std::cout << "Negative semiaxis" << std::endl;
-        }
+        int a;
+        int b;
 
-        a = l;
-        b = s;
-    }
+    public:
+        Ellipse() = default;
+        Ellipse(int l, int s);
 
-    float Perimeter()
-    {
-        return 2 * acos(-1) * sqrt((pow(a, 2) + pow(b, 2)) / 2);
-    }
-
-    float Square()
-    {
-        return acos(-1) * a * b;
-    }
-};
+        void setALL(int l, int s);
+     
+        float Perimeter();
+        
+        float Square();
+       
+    };
+}

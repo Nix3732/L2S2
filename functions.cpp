@@ -9,6 +9,9 @@ namespace ez
 		std::cin >> axis1 >> axis2;
 		Ellipse c;
 		c.setALL(axis1, axis2);
+	}
+	void out()
+	{
 		std::cout << "Perimetr = " << c.Perimeter() << std::endl << "Ploshad' = " << c.Square() << std::endl;
 	}
 }
